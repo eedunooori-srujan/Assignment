@@ -1,0 +1,28 @@
+/* .card-body {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: -11.75rem;
+  background-image:
+  
+  url("/assets/images/45.jpg");  ;
+} */
+
+.card{
+    margin: 0;
+    font-family: var(--bs-font-sans-serif);
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #fff;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0,0,0,1)
+  
+  }
+
+  .bd-navbars {
+    padding: 0.75rem 0;
+    color:#fff;
+    text-align: center;
+    background-color: #7952b3;
+}

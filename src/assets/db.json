@@ -1,0 +1,26 @@
+{
+  "employee": [
+    {
+        "id": 1,
+        "employee_name": "srujan",
+        "designation": "Angular Developer",
+
+        "email": "srujaneedunoori145@gmail.com",
+        "salary": "50000",
+        "phone_number": "95550803142",
+        "qualification": "B.Tech",
+        "manager":"chairaman"
+        
+      }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

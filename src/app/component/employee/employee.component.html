@@ -1,0 +1,123 @@
+
+
+<div class="container">
+    <div class="row">
+        <div class="wpb_column vc_column_container col-md-10">
+
+            <div class="container">
+
+                <div class="card-body m-9" style="margin-right:auto;">
+
+                    <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="text-center border border-light p-5">
+                        <div class="row mx-1 mb-2">
+                            <h1 class=""> Employee Registration</h1>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputemployeename4" class="required">Employee Name</label><span
+                                    style="color: red;"> *</span>
+                                <input type="text" formControlName="employee_name" id="defaultRegisterFormEmployeeName"
+                                    name="employee_name" class="form-control" placeholder="Employee name">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputemployeename4" class="required">Designation</label>
+
+                                <input type="text" formControlName="designation" id="defaultRegisterFormdesignation"
+                                    name="designation" class="form-control" placeholder="Designation">
+
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4" class="required">Email</label> <span style="color: red;">
+                                    *</span>
+
+                                <input type="email" formControlName="email" id="defaultRegisterFormEmail"
+                                    class="form-control mb-4" placeholder="E-mail">
+
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputdob4" class="required">Mobile Number</label> <span style="color: red;">
+                                    *</span>
+                                <input type="text" formControlName="phone_number" id="defaultRegisterphonenumber"
+                                    name="phone_number" class="form-control" placeholder="Enter phone number">
+
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="inputemployeename4" class="required">Salary</label> <span
+                                    style="color: red;"> *</span>
+
+                                <input type="text" formControlName="salary" id="defaultRegisterFormsalary" name="salary"
+                                    class="form-control" placeholder="Salary">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputemployeename4" class="required">Qualification</label>
+                                <input type="text" formControlName="qualification" id="defaultRegisterFormqualification"
+                                    name="qualification" class="form-control" placeholder="Qualification">
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="inputemployeename4" class="required">Manager</label>
+                                <input type="text" formControlName="manager" id="defaultRegisterFormmanager"
+                                    name="manager" class="form-control" placeholder="Manager">
+                            </div>
+                        </div>
+                        <div class="container">
+                            <button mat-raised-button color="" class="btn btn-primary" type="submit"
+                                style="margin-right: 10px;" [disabled]="userForm.invalid">
+                                Update</button>
+                            <button class="btn btn-warning" type="reset" (click)="reset()"><i
+                                    class="fas fa-snowplow"></i>
+                                Reset</button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="wpb_column vc_column_container col-md-6">
+            <!-- the loop -->
+
+        </div>
+    </div>
+</div>
+<!-- nav -->
+<nav class="bd-navbars  ">
+    Register Employee
+</nav>
+
+
+<!-- table -->
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Employee ID</th>
+            <th scope="col"> Employee Name</th>
+            <th scope="col"> Designation</th>
+            <th scope="col">Email</th>
+            <th scope="col">Mobile Number</th>
+            <th scope="col">Salary</th>
+            <th scope="col"> Qualification</th>
+            <th scope="col">Manager</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of dataServer; let i = index">
+            <td scope="row">{{i+1}}</td>
+            <td scope="row"> {{data.employee_name}}</td>
+            <td scope="row"> {{data.designation}}</td>
+            <td scope="row"> {{data.email}}</td>
+            <td scope="row"> {{data.phone_number}}</td>
+            <td scope="row"> {{data.salary}}</td>
+            <td scope="row"> {{data.qualification}}</td>
+
+            <td scope="row"> {{data.manager}}</td>
+
+            <td>
+                <button type="button" style="margin-right: 10px;" class="btn btn-outline-primary me-2"
+                    data-bs-toggle="modal" data-bs-target="#editEmployee" (click)="editEmployee(i)">Edit</button>
+                <button type="button" class="btn btn-outline-danger" (click)="deleteEmployee(i)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
